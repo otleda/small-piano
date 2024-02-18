@@ -8,31 +8,114 @@
 body {
     display: flex;
     justify-content: center;
-    
+    align-items: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: black;
 }
+
 #piano {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items:flex-end;
-    width: 600px;
-    height: 300px;
-    background-color: blue;
+    width: 560px;
+    height: 280px;
+    border: 5px solid #8e7257;
+    border-radius: 10px;
+    background-color: #000;
+    padding: 20px;
 } 
-#container-key {
+.controlers {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    border: 2px solid #252424;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: #171716;
+}
+
+.control-left {
+    width: 50%;
+}
+.control-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 50%;
+}
+.control-right .btn-control {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+.control-right > div:nth-child(2) {
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+    margin-bottom: 6px;
+}
+/* Button control synthesizer */
+.control-right > div:nth-child(2) > button {
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.control-right > div:nth-child(2) > button::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: black;
+}
+.control-right > div:nth-child(2) > button::after {
+    content: '';
+    position: absolute;
+    left: 11px;
+    bottom: 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgb(237, 237, 242);
+}
+/* Color button synthesizer */
+.control-right > div:nth-child(2) > button:nth-child(1) {
+    background-color: #62e8fb;
+}
+.control-right > div:nth-child(2) > button:nth-child(2) {
+    background-color: #62e8fb;
+}
+.control-right > div:nth-child(2) > button:nth-child(3) {
+    background-color: #62e8fb;
+}
+.control-right > div:nth-child(2) > button:nth-child(4) {
+    background-color: #6af1c4;
+}
+.control-right > div:nth-child(2) > button:nth-child(5) {
+    background-color: #f6b1a4;
+}
+.control-right > div:nth-child(2) > button:nth-child(6) {
+    background-color: #f5efc0;
+}
+
+/* keys to piano */
+#key-container{
     position: relative;
     display: flex;
     width: 100%;
-    height: 80%;
-    background-color: brown;
+    height: 100%;
+    background-color: whitesmoke;
 }
 
 li {
     position: relative;
     display: flex;
-    width: calc(100%/8);
+    width: 100%;
     height: 100%;
     background-color: gray;
 }
@@ -40,7 +123,9 @@ li {
         position: absolute;
         width: 100%;
         height: 100%;
-        border: 1px solid red;
+        border: 2px solid gray;
+        border-top: none;
+        border-bottom: 2px solid gainsboro;
         z-index: 1;
         background-color: whitesmoke;
     }
@@ -48,7 +133,10 @@ li {
         position: absolute;
         right: -30%;
         width: 60%;
-        height: 60%;
+        height: 64%;
         z-index: 2;
+        border: 2px solid gray;
+        border-top: none;
+        border-bottom: 15px solid #3e3c3a;
         background-color: black;    
     }
